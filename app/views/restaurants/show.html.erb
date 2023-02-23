@@ -1,17 +1,19 @@
 <p style="color: green"><%= notice %></p>
 
-<%= render @restaurant %>
+<div class="container p-3 my-3 bg-dark text-white">
+  <%= render @restaurant %>
 
-<p><strong>Reviews</strong></p>
-<%= render 'reviews/new' %>
-<ul class="list-group">
-  <% @restaurant.reviews.each do |review| %>
-    <li class="list-group-item"><%= review.content %></li>
-  <% end %>
-</ul>
-<br>
+  <p><strong>Reviews</strong></p>
+  <%= render 'reviews/new' %>
+  <ul class="list-group">
+    <% @restaurant.reviews.each do |review| %>
+      <li class="list-group-item"><%= review.content %> - Rating: <%= review.rating %></li>
+    <% end %>
+  </ul>
+  <br>
 
 
-<div>
-  <%= link_to "Back to restaurants", restaurants_path %>
+  <div>
+    <%= link_to "Back to restaurants", restaurants_path %>
+  </div>
 </div>
